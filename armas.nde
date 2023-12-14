@@ -1,0 +1,71 @@
+LINK = armas.xlsx
+page=21,29.7,portrait
+cardsize=21/3, 29.7/3
+margins=0,0,0,0
+border=none,#000000,0,CROSSDASH,#000000,1
+baserange=,on
+
+[fronts]=1-{(nombre)}
+[backs]={(nombre)+1}-{(nombre)*2}
+
+baserange=[fronts],on
+
+[i]=50
+[1]=6
+[lines(count)]%, (count),1,10 = {[i]+(count)*[1]}
+[m]=30
+<imbox> = 5%, 22%, 90%, 30%
+
+FONT = Arial, 16, TB, #0000FF
+TEXT=[fronts],"{§}",90%,0%,100%,10%
+
+IMAGE = [fronts], "backgroundg2.jpg", 55%, 60%, 70%, 70%, 30, PT
+
+RECTANGLE=[backs], 0%, 0%, 100%, 100%, #aa0000, empty, 0.5
+RECTANGLE=[backs], 0%, 0%, 100%, 100%, #ffffff, empty, 0.1
+IMAGE = [backs], "coc_logo.png", 5%, 2%, 90%, 20%, 0, PT
+IMAGE = [backs], "backgroundg2.jpg", 55%, 60%, 70%, 70%, 30, PT
+IMAGE = [backs], "im_armas/back_[tipo].png", 5%, 5%, 90%, 90%, 0, PT
+FONT = Arial, 18, TBFD, #000000
+TEXT=[backs],"[nombre]",5%,25%,90%,50%, center, wwcenter,0,100
+
+RECTANGLE=[fronts] , 0%, 0%, 100%, 15%, #aa0000
+RECTANGLE=[fronts] , 0%, 15%, 100%, 5%, #660000
+FONT = Arial, 16, TBFD, #FFFFFF
+TEXT = [fronts], "[nombre]", 4%, 0, 92%, 15%, center, wwcenter,0,100,,0,0,85,100
+FONT = Arial, 11, TB, #FFFFFF
+TEXT = [fronts], "Epoca: [epoca]", 0, 15%, 100%, 5%
+
+#RECTANGLE = [fronts], <imbox>, empty, #555555, 0.02
+IMAGE = [fronts], "im_armas/[im]", <imbox>, 0,PT
+
+FONT = Arial, 11, BT, #000000
+TEXT = [fronts], "Base:"    , 2%, [lines1]%, 50%, 5%, left
+TEXT = [fronts], "Daño:"    , 2%, [lines2]%, 50%, 5%, left
+TEXT = [fronts], "Alcance:" , 2%, [lines3]%, 50%, 5%, left
+TEXT = [fronts], "Usos:"    , 2%, [lines4]%, 50%, 5%, left
+TEXT = [fronts], "Cargador:", 2%, [lines5]%, 50%, 5%, left
+TEXT = [fronts], "Coste:"   , 2%, [lines6]%, 50%, 5%, left
+TEXT = [fronts], "Defecto:" , 2%, [lines7]%, 50%, 5%, left
+FONT = Arial, 11, T, #000000
+TEXT = [fronts], "[habilidad]", [m]%, [lines1]%, 70%, 5%, left
+TEXT = [fronts], "[dano]"     , [m]%, [lines2]%, 70%, 5%, left
+TEXT = [fronts], "[alcance]"  , [m]%, [lines3]%, 70%, 5%, left
+TEXT = [fronts], "[usos]"     , [m]%, [lines4]%, 70%, 5%, left,center,0,100,,,,90
+TEXT = [fronts], "[carg]"     , [m]%, [lines5]%, 70%, 5%, left
+TEXT = [fronts], "[coste]"    , [m]%, [lines6]%, 70%, 5%, left
+TEXT = [fronts], "[fd]"       , [m]%, [lines7]%, 70%, 5%, left
+
+LINE = [fronts], 2%, [lines1]%-1%, 98%, [lines1]%-1%, #999999, 0.05
+LINE = [fronts], 2%, [lines2]%-1%, 98%, [lines2]%-1%, #999999, 0.05
+LINE = [fronts], 2%, [lines3]%-1%, 98%, [lines3]%-1%, #999999, 0.05
+LINE = [fronts], 2%, [lines4]%-1%, 98%, [lines4]%-1%, #999999, 0.05
+LINE = [fronts], 2%, [lines5]%-1%, 98%, [lines5]%-1%, #999999, 0.05
+LINE = [fronts], 2%, [lines6]%-1%, 98%, [lines6]%-1%, #999999, 0.05
+LINE = [fronts], 2%, [lines7]%-1%, 98%, [lines7]%-1%, #999999, 0.05
+LINE = [fronts], 2%, [lines8]%-1%, 98%, [lines8]%-1%, #999999, 0.05
+
+RECTANGLE=[fronts] , 0%, 0%, 100%, 100%, #ffffff, EMPTY, 0.1
+
+duplex=[fronts],[backs]
+print=duplex
